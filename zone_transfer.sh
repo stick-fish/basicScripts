@@ -1,5 +1,4 @@
 #!/bin/bash
-#Quick and dirty as they say.
 
 if [ -z "$1" ]
 then 
@@ -8,7 +7,7 @@ then
   echo "Example -->  $0 <hostname>"
 else 
   for name in $(host -t ns $1); do
-    result=$(host -l $1 $name | grep "has address" | sort -u >> $1.txt)
+    result=$(host -l $1 $name | grep "has address" | sed s/"has address"/"  "/ >> $1)
   done
+  echo "| -- Output saved to $1 --|"
 fi
- echo "To view the results: cat $1.txt"
