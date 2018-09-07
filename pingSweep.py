@@ -9,7 +9,7 @@ commands to output just a standard IPv4 address if found. '''
 hosts = range(0,254)
 
 # ips eg: "192.168.1"
-ips = "10.11.1"
+ip = "X.X.X"
 
 # Text file output name
 ping_res = 'results_ping.txt'
@@ -17,7 +17,7 @@ ping_res = 'results_ping.txt'
 # Loops through specified range and runs ping command
 # Using longer wait time gives a better scan result, change -W to increase or decrease
 for i in hosts:
-  ip_scan = ips + '.' + str(i)
+  ip_scan = ip + '.' + str(i)
   command = os.system("ping -c 1 -W 10 '{0}' | grep 'bytes from' | cut -d ' ' -f 4 | sed s/:/''/ >> '{1}' &".format(ip_scan,ping_res))
 
 #Basic usage to view file
